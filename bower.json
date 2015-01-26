@@ -1,0 +1,27 @@
+{
+  "name": "web-img",
+  "version": "0.0.0",
+  "authors": [
+    "vomvoru <qkrcjfgus3@gmail.com>"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "license": "MIT",
+  "main": "web-img.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.5"
+  }
+}
