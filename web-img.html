@@ -9,6 +9,8 @@
 -->
 <link rel="import" href="../polymer/polymer.html">
 
+<link rel="import" href="../core-ajax/core-ajax.html">
+
 <!--
 Element providing solution to no problem in particular.
 
@@ -21,20 +23,34 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://polymerlabs.github.io/web-img
 -->
-<polymer-element name="web-img" extends='img' >
+<polymer-element name="web-img" >
 
   <template>
     <link rel="stylesheet" href="web-img.css">
-    <!--<span>{{href}}</span>-->
-    <content></content>
-    <!--<web-img id="preview" href="{{href}}"></web-img>-->
+    <img src="{{$.get_screenshot.response}}" width="{{width}}" height="{{height}}"></img>
+    <core-ajax id="get_screenshot"
+        auto
+        method="GET"
+        url="{{server}}"
+        params='{
+        "url":"{{url}}",
+        "width": "{{width}}",
+        "height": "{{height}}",
+        "viewHeight": "{{viewHeight}}",
+        "viewWidth": "{{viewWidth}}"}'
+        handleAs="text"></core-ajax>
   </template>
 
   <script>
 
     Polymer({
       publish:{
-
+        'url':'',
+        'server':'',
+        'height':768,
+        'width':1024,
+        'viewHeight':768,
+        'viewWidth':1024
       }
     });
 
